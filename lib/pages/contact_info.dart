@@ -92,6 +92,7 @@ class _ContactInfoState extends State<ContactInfo> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
+        CustomContactImage(index: widget.id),
         CustomHeaderField(prop: 'Contact № ${widget.id}', value: name),
         Divider(height: 32.0),
         Text(
@@ -105,6 +106,31 @@ class _ContactInfoState extends State<ContactInfo> {
         CustomTextField(prop: 'Gender', value: gender),
         Divider(height: 32.0),
       ],
+    );
+  }
+}
+
+class CustomContactImage extends StatelessWidget {
+  CustomContactImage({this.index});
+
+  final int index;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 120,
+      width: 120,
+      margin: EdgeInsets.only(bottom: 16.0),
+      decoration: BoxDecoration(shape: BoxShape.circle),
+      // child: ClipOval(
+      child: Hero(
+        tag: 'imageHero$index',
+        child: Image(
+          image: ExactAssetImage('images/profile_$index.jpg'),
+          fit: BoxFit.cover,
+        ),
+      ),
+      // ),
     );
   }
 }

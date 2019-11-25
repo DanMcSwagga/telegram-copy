@@ -90,6 +90,18 @@ class _HomePageState extends State<HomePage> {
           size: 20,
         ),
       ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.settings),
+            title: Text('Settings'),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.dashboard),
+            title: Text('Themes'),
+          ),
+        ],
+      ),
     );
   }
 }

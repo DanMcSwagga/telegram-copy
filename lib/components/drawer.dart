@@ -44,8 +44,8 @@ class CustomDrawer extends StatelessWidget {
           Divider(color: const Color(0xffa2a2a2), height: 14.0),
           //
           DrawerItem(
-              text: 'Invite Friends',
-              icon: OMIcons.personAdd,
+              text: 'Themes',
+              icon: OMIcons.dashboard,
               action: () => Navigator.pushNamed(context, '/themescreen')),
           DrawerItem(
               text: 'Telegram FAQ',

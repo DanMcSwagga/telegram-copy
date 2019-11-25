@@ -27,20 +27,50 @@ class _ChatPreviewState extends State<ChatPreview> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      child: Container(
-        // color: const Color(0xff3a5387),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: <Widget>[
-            ChatPreviewAvatar(
-              avatarImageAsset: 'images/profile_${widget.indexChat}.jpg',
-            ),
-            ChatPreviewData(
-              index: widget.indexChat,
-              name: widget.name,
-              message: widget.messagePreview,
-            ),
-          ],
+      // color: const Color(0xff3a5387),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: <Widget>[
+          ChatPreviewHeroAvatar(
+            index: widget.indexChat,
+          ),
+          ChatPreviewData(
+            index: widget.indexChat,
+            name: widget.name,
+            message: widget.messagePreview,
+          ),
+        ],
+      ),
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => ContactInfoPage(id: widget.indexChat),
+          ),
+        );
+      },
+    );
+  }
+}
+
+class ChatPreviewHeroAvatar extends StatelessWidget {
+  ChatPreviewHeroAvatar({this.index});
+
+  final int index;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 58,
+      width: 58,
+      margin: EdgeInsets.symmetric(horizontal: 8.0),
+      child: ClipOval(
+        child: Hero(
+          tag: 'imageHero$index',
+          child: Image(
+            image: ExactAssetImage('images/profile_$index.jpg'),
+            fit: BoxFit.cover,
+          ),
         ),
       ),
     );

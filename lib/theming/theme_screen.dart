@@ -18,7 +18,7 @@ class _ThemeScreenState extends State<ThemeScreen> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).primaryColor,
-        title: Text("Homepage"),
+        title: Text("Themes"),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16),
