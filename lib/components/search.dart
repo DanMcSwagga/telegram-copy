@@ -14,8 +14,8 @@ import '../model.dart';
  * https://www.youtube.com/watch?v=cLbNY2nCuYw
  */
 
-class SearchAppBar extends StatefulWidget implements PreferredSizeWidget {
-  SearchAppBar({Key key})
+class CustomAppBar extends StatefulWidget implements PreferredSizeWidget {
+  CustomAppBar({Key key})
       : preferredSize = Size.fromHeight(kToolbarHeight),
         super(key: key);
 
@@ -26,7 +26,7 @@ class SearchAppBar extends StatefulWidget implements PreferredSizeWidget {
   _SearchAppBarState createState() => _SearchAppBarState();
 }
 
-class _SearchAppBarState extends State<SearchAppBar> {
+class _SearchAppBarState extends State<CustomAppBar> {
   final TextEditingController _filter = new TextEditingController();
 
   // String _searchText = '';

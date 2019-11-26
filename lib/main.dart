@@ -16,7 +16,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ChangeNotifierProvider<ThemedModel>(
       builder: (_) => ThemedModel(
-        ThemeData(brightness: Brightness.dark, primaryColor: Colors.green),
+        ThemeData(
+          brightness: Brightness.dark,
+          // primaryColor: Colors.green,
+        ),
       ),
       child: MaterialAppWithTheme(),
     );
@@ -33,7 +36,7 @@ class MaterialAppWithTheme extends StatelessWidget {
       home: HomePage(),
       theme: ThemeData(
         brightness: Brightness.light,
-        primarySwatch: Colors.red,
+        // primarySwatch: Colors.red,
       ),
       darkTheme: theme.themeData,
       routes: {

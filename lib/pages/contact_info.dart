@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import "package:provider/provider.dart";
 
 import '../model.dart';
+// import '../components/bottom_bar.dart';
 
 class ContactInfoPage extends StatelessWidget {
   final int id;
@@ -34,6 +35,7 @@ class ContactInfoPage extends StatelessWidget {
           child: ContactInfo(id: id),
         ),
       ),
+      // bottomNavigationBar: CustomBottomBar(),
     );
   }
 }
@@ -104,7 +106,6 @@ class _ContactInfoState extends State<ContactInfo> {
         CustomTextField(prop: 'Weight', value: mass),
         CustomTextField(prop: 'Birth year', value: birthYear),
         CustomTextField(prop: 'Gender', value: gender),
-        Divider(height: 32.0),
       ],
     );
   }

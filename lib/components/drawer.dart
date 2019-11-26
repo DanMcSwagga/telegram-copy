@@ -1,57 +1,75 @@
 import 'package:flutter/material.dart';
 import 'package:outline_material_icons/outline_material_icons.dart';
 
+import '../theming/theme_screen.dart';
+import '../pages/new_chat.dart';
+
 class CustomDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return AnimatedContainer(
-      duration: Duration(seconds: 1),
-      // color: const Color(0xff3a5387),
-      child: ListView(
-        padding: EdgeInsets.all(0.0),
-        children: <Widget>[
-          DrawerProfile(),
-          //
-          DrawerItem(
-              text: 'New Group',
-              icon: Icons.people_outline,
-              action: () => Navigator.pushNamed(context, '/newchat')),
-          DrawerItem(
-              text: 'New Secret Chat',
-              icon: OMIcons.lock,
-              action: () => Navigator.pushNamed(context, '/newchat')),
-          DrawerItem(
-              text: 'New Channel',
-              icon: OMIcons.speakerNotes,
-              action: () => Navigator.pushNamed(context, '/newchat')),
-          DrawerItem(
-              text: 'Contacts',
-              icon: OMIcons.personOutline,
-              action: () => Navigator.pushNamed(context, '/contactinfo')),
-          DrawerItem(
-              text: 'Calls',
-              icon: OMIcons.call,
-              action: () => Navigator.pushNamed(context, '/contactinfo')),
-          DrawerItem(
-              text: 'Saved Messages',
-              icon: OMIcons.bookmarkBorder,
-              action: () => Navigator.pushNamed(context, '/newchat')),
-          DrawerItem(
-              text: 'Settings',
-              icon: OMIcons.settings,
-              action: () => Navigator.pushNamed(context, '/settings')),
-          //
-          Divider(color: const Color(0xffa2a2a2), height: 14.0),
-          //
-          DrawerItem(
+    return Drawer(
+      elevation: 11,
+      child: AnimatedContainer(
+        duration: Duration(seconds: 1),
+        // color: const Color(0xff3a5387),
+        child: ListView(
+          padding: EdgeInsets.all(0.0),
+          children: <Widget>[
+            DrawerProfile(),
+            //
+            DrawerItem(
+                text: 'New Group',
+                icon: Icons.people_outline,
+                action: () => Navigator.pushNamed(context, '/newchat')),
+            DrawerItem(
+                text: 'New Secret Chat',
+                icon: OMIcons.lock,
+                action: () => Navigator.pushNamed(context, '/newchat')),
+            DrawerItem(
+                text: 'New Channel',
+                icon: OMIcons.speakerNotes,
+                action: () => Navigator.pushNamed(context, '/newchat')),
+            DrawerItem(
+                text: 'Contacts',
+                icon: OMIcons.personOutline,
+                action: () => Navigator.pushNamed(context, '/contactinfo')),
+            DrawerItem(
+                text: 'Calls',
+                icon: OMIcons.call,
+                action: () => Navigator.pushNamed(context, '/contactinfo')),
+            DrawerItem(
+                text: 'Saved Messages',
+                icon: OMIcons.bookmarkBorder,
+                action: () => Navigator.pushNamed(context, '/newchat')),
+            DrawerItem(
+                text: 'Settings',
+                icon: OMIcons.settings,
+                action: () => Navigator.pushNamed(context, '/settings')),
+            //
+            Divider(color: const Color(0xffa2a2a2), height: 14.0),
+            //
+            DrawerItem(
               text: 'Themes',
-              icon: OMIcons.dashboard,
-              action: () => Navigator.pushNamed(context, '/themescreen')),
-          DrawerItem(
+              icon: OMIcons.timelapse,
+              action: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => ThemeScreen(),
+                ),
+              ),
+            ),
+            DrawerItem(
               text: 'Telegram FAQ',
               icon: OMIcons.liveHelp,
-              action: () => Navigator.pushNamed(context, '/newchat')),
-        ],
+              action: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => NewChatPage(),
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -106,11 +124,11 @@ class DrawerProfile extends StatelessWidget {
         SizedBox(
           height: 170.0,
           width: double.infinity,
-          child: Image(
-            fit: BoxFit.fitWidth,
-            image: NetworkImage(
-                'https://c.tadst.com/gfx/750x500/barcelona-morning-sky.jpg?1'),
-          ),
+          // child: Image(
+          //   fit: BoxFit.fitWidth,
+          //   image: NetworkImage(
+          //       'https://c.tadst.com/gfx/750x500/barcelona-morning-sky.jpg?1'),
+          // ),
         ),
         Positioned(
           bottom: 64.0,

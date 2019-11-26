@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import "package:provider/provider.dart";
 import 'package:shared_preferences/shared_preferences.dart';
+
 import '../model.dart';
+// import '../components/bottom_bar.dart';
 
 class SettingsPage extends StatelessWidget {
   @override
@@ -18,6 +20,7 @@ class SettingsPage extends StatelessWidget {
           ),
         ),
       ),
+      // bottomNavigationBar: CustomBottomBar(),
     );
   }
 }
@@ -95,7 +98,7 @@ class _SettingsFormState extends State<SettingsForm> {
           padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 20.0),
           onPressed: () => theme.themeData = ThemeData(
             brightness: Brightness.light,
-            primaryColor: Colors.green,
+            // primaryColor: Colors.green,
           ),
           child: Text(
             'Light Theme',
@@ -107,7 +110,7 @@ class _SettingsFormState extends State<SettingsForm> {
           padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 20.0),
           onPressed: () => theme.themeData = ThemeData(
             brightness: Brightness.dark,
-            primaryColor: Colors.green,
+            // primaryColor: Colors.green,
           ),
           child: Text(
             'Dark Theme',

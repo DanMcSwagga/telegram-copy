@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import "package:provider/provider.dart";
 
 import '../model.dart';
+// import '../components/bottom_bar.dart';
 
 class NewChatPage extends StatelessWidget {
   @override
@@ -37,6 +38,7 @@ class NewChatPage extends StatelessWidget {
           size: 20,
         ),
       ),
+      // bottomNavigationBar: CustomBottomBar(),
     );
   }
 }
